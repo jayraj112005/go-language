@@ -1,0 +1,36 @@
+Q1
+package main
+
+import (
+	rectangle "GOLang/rect"
+	"fmt"
+)
+
+func main() {
+	var l, b int
+	fmt.Print("Enter the length and width of rectangle: ")
+	fmt.Scanln(&l, &b)
+	area := rectangle.Area(l, b)
+	fmt.Printf("Area of rectangle with length %d and width %d is %.d\n", l, b, area)
+}
+Q2
+package main
+
+import (
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+func main() {
+    for i := 0; i <= 10; i++ {
+        fmt.Println(i)
+        delay()
+    }
+}
+
+func delay() {
+    rand.Seed(time.Now().UnixNano())
+    ms := rand.Intn(2500)
+    time.Sleep(time.Duration(ms) * time.Millisecond)
+}
