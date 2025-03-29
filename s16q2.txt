@@ -1,0 +1,21 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	rand.Seed(time.Now().UnixNano()) // Seed the random number generator
+
+	for i := 0; i <= 10; i++ {
+		fmt.Println(i)
+		delay()
+	}
+}
+
+func delay() {
+	duration := time.Duration(rand.Intn(251)) * time.Millisecond // Random delay between 0-250ms
+	time.Sleep(duration)
+}
